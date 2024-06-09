@@ -32,7 +32,7 @@ Not tested : usage from within another python file like described below in the o
 <p>Uses re, sys, os, Path from pathlib, Optional from typing.</p>
 
 ### 1.0.1b More splitting
-- add more splitting in order to split the large 'Story Stylesheet.twee' and 'Story JavaScript.twee' files into individual css rules or js scripts if each sections are properly found using the stylesheet_pattern and script_pattern.
+- add more splitting in order to split the large 'Story Stylesheet.twee' and 'Story JavaScript.twee' files into individual css rules or js scripts if each sections are properly found using the stylesheet_pattern and script_pattern. The large files are then deleted.
 
 #### About patterns, titles and tags
 The script splits the twee file passed in argument based on patterns defined at the beginning, like this :<br>
