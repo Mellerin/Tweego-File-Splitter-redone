@@ -184,6 +184,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
+        # if no directory is given, use the filename as directory name
+        # otherwise could lead to an error when calling postProcess or maybe elsewhere in code
         if args.directory is None:
             args.directory = nameToDirectory(filename=args.file)
         splitFile(args.file, args.directory, decoding=args.decoding, encoding=args.encoding)
