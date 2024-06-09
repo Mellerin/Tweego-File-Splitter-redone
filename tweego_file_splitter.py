@@ -154,6 +154,11 @@ class CustomArgumentParser(argparse.ArgumentParser):
     #not sure if good but use this if no argument given (twee file) to print help instead of throwing an error
     def error(self, message):
         if 'the following arguments are required: file' in message:
+            #add here a print to inform user must provide a filename
+            self._print_message(f"error: the following argument are required: file\n", sys.stderr)
+            self.print_help()
+            sys.exit(2)
+        elif 'too few arguments' in message: #should not happen but just in case
             self.print_help()
             sys.exit(2)
         super().error(message) #handle and throw any other error
