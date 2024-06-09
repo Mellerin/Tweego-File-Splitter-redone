@@ -145,9 +145,6 @@ def splitFile(filename: str, directory: Optional[str] = None, decoding: Optional
     with open(filename, "r", encoding=decoding) as f:
         content = f.read()
 
-    if directory is None:
-        directory = nameToDirectory(filename)
-
     os.makedirs(directory, exist_ok=True)
 
     for match in passage_pattern.finditer(content):
@@ -187,6 +184,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
+        if args.directory is None:
+            args.directory = nameToDirectory(filename=args.file)
         splitFile(args.file, args.directory, decoding=args.decoding, encoding=args.encoding)
         if args.use_moresplit: # if --no-moresplit is used then false then not running postProcess
             postProcess(args.directory, encoding=args.encoding)
