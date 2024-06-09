@@ -31,6 +31,9 @@ Only tested in commandline mode under windows10 for now and it works. Should als
 Not tested : usage from within another python file like described below in the original Readme.md.</p>
 <p>Uses re, sys, os, Path from pathlib, Optional from typing.</p>
 
+### 1.0.1b More splitting
+- add more splitting in order to split the large 'Story Stylesheet.twee' and 'Story JavaScript.twee' files into individual css rules or js scripts if each sections are properly found using the stylesheet_pattern and script_pattern.
+
 #### About patterns, titles and tags
 The script splits the twee file passed in argument based on patterns defined at the beginning, like this :<br>
 
@@ -55,6 +58,7 @@ Splitting Titles and Tags are defined just below, like this :<br>
 <br>
 <p>Just to say that splitting is done with those definitions, so if your twee file is made with other patterns or you want different tags, less or more subfolders you have to modify those sections by yourself inside the code.</p>
 <br>
+<p>stylesheet_pattern and script_pattern are regex patterns used to split the large Story Stylesheet.twee and Story JavaScript.twee files into individual rules or scripts files, depending on the patterns found.</p>
 
 ## Tested With
 - Version 1.0.0 tested with Tweego 1.3.0 and Python 3.7.3
